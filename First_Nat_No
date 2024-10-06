@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class CWJ_First_Nat_No {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter  the number n: ");
+        int n = sc.nextInt();
+        int sum = 0;
+        int i = 1;
+        while(i<=n){
+            sum = sum + i;
+            i++;
+        }
+        System.out.println("Sum of first natural number: " + sum);
+    }
+}
