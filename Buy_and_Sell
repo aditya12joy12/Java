@@ -1,0 +1,20 @@
+public class CWJ_BuyAndSell {
+    public static int buyandsell(int price[]){
+        int buy_price = Integer.MAX_VALUE;
+        int maxprofit = 0;
+        for(int i=1; i<price.length; i++){
+            if(buy_price<price[i]){
+                int profit = price[i] - buy_price;
+                maxprofit = Math.max(maxprofit,profit);
+            }
+            else{
+                buy_price=price[i];
+            }
+        }
+        return maxprofit;
+    }
+    public static void main(String[] args) {
+        int price[] = {7,1,5,3,6,4};
+        System.out.println("Maximum price is: "+ buyandsell(price));
+    }
+}
