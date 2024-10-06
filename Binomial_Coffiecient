@@ -1,0 +1,23 @@
+import java.util.*;
+public class CWJ_Function_Binomial_Coffiecient {
+    public static int factorial(int n) {
+        int f = 1;
+        for (int i = 1; i <= n; i++) {
+            f = f * i;
+        }
+        return f;
+    }
+    public static int binomial(int n, int r){
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+        r = sc.nextInt();
+        int fact_n = factorial(n);
+        int fact_r = factorial(r);
+        int fact_nmr = factorial(n-r);
+        int biocoffe = fact_n/(fact_r*fact_nmr);
+        return biocoffe;
+    }
+    public static void main(String[] args) {
+        System.out.println(binomial(5,2));
+    }
+}
