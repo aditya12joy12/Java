@@ -1,0 +1,31 @@
+public class CWJ_BinToDec {
+    public static void bintodec(int biNum){
+        int myNum = biNum;
+        int pow = 0;
+        int decNum = 0;
+        while(biNum>0){
+            int lastDigit = biNum%10;
+            decNum = decNum + (lastDigit * (int)Math.pow(2,pow));
+            pow++;
+            biNum = biNum/10;
+        }
+        System.out.println("decimal of " + myNum + " = " + decNum);
+    }
+
+    public static void dectobin(int n){
+        int myNum2 = n;
+        int pow = 0;
+        int biNum = 0;
+        while(n>0){
+            int rem = n%2;
+            biNum = biNum + (rem * (int)Math.pow(10,pow));
+            pow++;
+            n=n/2;
+        }
+        System.out.println("binary of " + myNum2 + " = " + biNum);
+    }
+    public static void main(String[] args) {
+        bintodec(111);
+        dectobin(7);
+    }
+}
