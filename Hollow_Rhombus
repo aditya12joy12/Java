@@ -1,0 +1,21 @@
+public class CWJ_Hollow_Rhombus {
+    public static void hollow_rombus(int totlrow){
+        for(int i=1; i<=totlrow; i++){
+            for(int j=1; j<=totlrow-i; j++){
+                System.out.print(" ");
+            }
+            for(int j=1; j<=totlrow; j++){
+                if(i==1 || i==totlrow || j==1 || j==totlrow){
+                    System.out.print("*");
+                }
+                else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        hollow_rombus(10);
+    }
+}
