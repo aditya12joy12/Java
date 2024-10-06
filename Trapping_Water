@@ -1,0 +1,31 @@
+public class CWJ_Trapping_Water_DSA {
+    public static int trapped_rain(int[] height){
+        int n = height.length;
+        // calculated left max boundry - array
+        int leftMax[] = new int [n];
+        leftMax[0] = height[0];
+        for(int i=1; i<n; i++){
+            leftMax[i] = Math.max(height[i],leftMax[i-1]);
+        }
+
+        // calculated right max boundry - array
+        int right_max[] = new int [n];
+        right_max[n-1] = height[n-1];
+        for(int i=n-2; i>=0; i--){
+            right_max[i] = Math.max(height[i],right_max[i+1]);
+        }
+        int trappedwater = 0;
+        // loop
+        for(int i=0; i<n;i++){
+            // waterlevl = min(left side boundry, right side boundry)
+            int waterlevel = Math.min(leftMax[i], right_max[i]);
+            // trapped water = water level - height[i]
+            trappedwater += waterlevel-height[i];
+        }
+        return trappedwater;
+    }
+    public static void main(String[] args) {
+        int height[] = {4,2,0,6,3,2,5};
+        System.out.println(trapped_rain(height));
+    }
+}
