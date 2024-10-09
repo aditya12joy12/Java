@@ -1,0 +1,31 @@
+import java.util.*;
+public class CWJ_Rat_Count_House {
+    public static int foodavalaible(int r, int unit, int arr[]){
+        int n = arr.length;
+        int sum=0;
+        int count=0;
+        int food=r*unit;
+        for(int i=0; i<n; i++){
+            sum += arr[i];
+            count++;
+            if(sum >= food){
+                break;
+            }
+        }
+        if(sum < food){
+            return 0;
+        }
+        return count;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int r = sc.nextInt();
+        int unit = sc.nextInt();
+        int n = sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0; i<arr.length; i++){
+            arr[i]=sc.nextInt();
+        }
+        System.out.println(foodavalaible(r,unit,arr));
+    }
+}
