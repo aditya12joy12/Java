@@ -1,0 +1,30 @@
+import java.util.*;
+public class CWJ_OperationBinary {
+    public static int binaryoperation(String str){
+        if (str == null || str.isEmpty()) {
+            return -1;
+        }
+        int result = str.charAt(0) - '0'; 
+        int n = str.length(); 
+        for (int i = 1; i < n; i++) {
+            char operator = str.charAt(i);
+            i++; 
+            if (i < n) { 
+                int currentNum = str.charAt(i) - '0'; 
+                if (operator == 'A') {
+                    result = result & currentNum; 
+                } else if (operator == 'B') {
+                    result = result | currentNum;
+                } else {
+                    result = result ^ currentNum; 
+                }
+            }
+        }
+        return result;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        System.out.println(binaryoperation(str));
+    }
+}
