@@ -1,0 +1,20 @@
+import java.util.*;
+public class CWJ_Remove_Duplicate_String {
+    public static String duplicatestring(String str){
+        int n = str.length();
+        String res="";
+        boolean mp[] = new boolean[26];
+        for(int i=0; i<n; i++){
+            if(mp[str.charAt(i) - 'a'] == false){
+                res += str.charAt(i);
+                mp[str.charAt(i)-'a']=true;
+            }
+        }
+        return res;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        System.out.println(duplicatestring(duplicatestring(str)));
+    }
+}
